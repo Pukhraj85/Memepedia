@@ -36,7 +36,8 @@ const MyPostWidget = ({ picturePath }) => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const mediumMain = palette.neutral.mediumMain;
   const medium = palette.neutral.medium;
-
+  const primaryLight = palette.primary.light;
+  const primaryDark = palette.primary.dark;
   const handlePost = async () => {
     const formData = new FormData();
     formData.append("userId", _id);
@@ -158,8 +159,10 @@ const MyPostWidget = ({ picturePath }) => {
           disabled={!post}
           onClick={handlePost}
           sx={{
-            color: palette.background.alt,
-            backgroundColor: palette.primary.main,
+            // color: palette.background.alt,
+            color: primaryDark,
+            // backgroundColor: palette.primary.main,
+            backgroundColor: primaryLight,
             borderRadius: "3rem",
           }}
         >
